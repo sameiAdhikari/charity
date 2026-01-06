@@ -1,0 +1,57 @@
+.commission {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 10px 30px 10px;
+  /* background-color: #eff2f0; */
+}
+.commission .heading {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.commission .container {
+  width: 101%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0px 30px;
+}
+.commission .container .box {
+  width: 45%;
+  height: 250px;
+  padding: 20px 30px;
+  margin: 20px 20px;
+  /* background-color: #fff; */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+/* .commission .container .box .icon{
+    position: relative;
+} */
+.commission .container .box .icon .fa-rotate,
+.commission .container .box .icon i {
+  position: relative;
+  font-size: 4rem;
+  font-weight: 550;
+  color: #ccc;
+}
+.commission .container .box .icon .fa-euro-sign {
+  position: absolute;
+  top: 0%;
+  left: 5%;
+  font-size: 1.2rem;
+  padding: 20px;
+}
+.commission .container .box h2 {
+  font-size: 1.45rem;
+  padding: 20px 0px;
+}
+.commission .container .box p {
+  font-size: 1.1rem;
+  text-align: justify;
+  color: #3d3d3d;
+}

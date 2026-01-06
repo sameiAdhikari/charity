@@ -1,0 +1,197 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif, serif;
+}
+.touch {
+  width: 100%;
+  min-height: 120vh;
+  background-color: #afb3ff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 9rem 30px 10px;
+  position: relative;
+  overflow: hidden;
+}
+.touch .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 96vh;
+  background: #ebefff;
+  z-index: 1;
+  border-bottom-right-radius: 150px;
+  border-bottom-left-radius: 150px;
+}
+.touch .roundShape {
+  position: absolute;
+  /* bottom: -40%; */
+  top: 49%;
+  left: 10%;
+  width: 600px;
+  height: 600px;
+  background: #afb3ff;
+  border-radius: 50%;
+  z-index: 2;
+}
+.touch .rodShape,
+.touch .rodShapeTwo,
+.touch .rodShapeThree,
+.touch .rodShapeFour {
+  position: absolute;
+  width: 400px;
+  height: 80px;
+  border-radius: 100px;
+  z-index: 2;
+  rotate: -40deg;
+}
+.touch .rodShape {
+  top: 0%;
+  left: 25%;
+  background: #838cf1;
+}
+.touch .rodShapeTwo {
+  top: 7%;
+  left: 31%;
+  background: #afb3ff;
+}
+.touch .rodShapeThree {
+  top: 50%;
+  left: 20%;
+  background: #838cf1;
+  z-index: 1;
+}
+.touch .rodShapeFour {
+  top: 58%;
+  left: 25%;
+  background: #afb3ff;
+}
+.touch div {
+  width: 50%;
+  margin-right: 5px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  padding: 0px 10px;
+  z-index: 2;
+}
+
+.touch div form {
+  width: 90%;
+}
+.touch div form .form-id {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.touch div form .form-id div {
+  width: 100%;
+  /* height: 5rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.touch div form .form-id div label {
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+  color: #333;
+  cursor: pointer;
+}
+.touch div form .form-id div input {
+  width: 100%;
+  padding: 10px 15px;
+  height: 2.2rem;
+  border-radius: 30px;
+  background: transparent;
+  border: 1px solid #000;
+  outline: none;
+  font-size: 1rem;
+}
+
+.touch div form .form-id div #errorMessage {
+  padding: 5px 0px 0px 0px;
+  margin-left: 10px;
+  color: red;
+  display: none;
+  font-size: 1rem;
+  height: 30%;
+}
+
+.touch div .comment {
+  width: 97%;
+  display: flex;
+  margin: 15px 0px 0px 10px;
+}
+.touch div .comment textarea {
+  max-width: 100%;
+  min-width: 100%;
+  padding: 15px 15px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  border: 1px solid #000;
+  outline: none;
+  background: transparent;
+  resize: none;
+}
+.touch div .comment textarea::placeholder {
+  font-size: 1.2rem;
+}
+.touch div .comment label {
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+  color: #333;
+  cursor: pointer;
+}
+.touch div form button {
+  background-color: #2f4e76;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 5px 50px 5px 50px;
+  margin-top: 20px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  float: right;
+}
+.touch div form button:hover {
+  background-color: #1b2e43;
+  transition: 0.3s;
+}
+.touch .formMessage {
+  width: 50%;
+  height: 93%;
+  z-index: 2;
+}
+.touch .formMessage img {
+  width: 514px;
+  height: 600px;
+  position: absolute;
+  top: 32%;
+  left: 13%;
+}
+.touch .formMessage h1 {
+  color: #333;
+  font-family: sans-serif;
+  margin-top: 40px;
+}
+.touch .formMessage span {
+  max-width: 65%;
+  font-size: 1rem;
+  color: #333;
+  margin-top: 15px;
+  line-height: 1.6rem;
+}
+.touch .formMessage a {
+  /* color: #2f4e76; */
+  text-decoration: underline;
+  margin-top: 5px;
+  font-weight: bold;
+}
