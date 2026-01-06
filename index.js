@@ -216,3 +216,105 @@ messageCancelBtn.addEventListener("click", () => {
   document.querySelector("#message").style.display = "none";
   document.body.style.overflow = "auto";
 });
+
+const listOfUrgentNeed = [
+  {
+    title: "Help save Anikat's Life! He is suffering from Duodenal atresia",
+    fundRaiser: "suhani ray",
+    fundRaised: 95400,
+    requiredFund: 350000,
+    contributions: 116,
+    imagePath:
+      "https://images.pexels.com/photos/32990273/pexels-photo-32990273.jpeg",
+  },
+
+  {
+    title: "Help Maya Fight Acute Lymphoblastic Leukemia",
+    fundRaiser: "Hope Care Foundation",
+    fundRaised: 119400,
+    requiredFund: 300000,
+    contributions: 89,
+    imagePath:
+      "https://images.pexels.com/photos/3952241/pexels-photo-3952241.jpeg",
+  },
+  {
+    title: "Support Earthquake Relief for Families in Rural Nepal",
+    fundRaiser: "Relief Nepal Trust",
+    fundRaised: 521750,
+    requiredFund: 600000,
+    contributions: 214,
+    imagePath:
+      "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg",
+  },
+  {
+    title: "Help Ravi Get a Kidney Transplant",
+    fundRaiser: "Friends of Ravi",
+    fundRaised: 255900,
+    requiredFund: 500000,
+    contributions: 143,
+    imagePath:
+      "https://images.pexels.com/photos/8460343/pexels-photo-8460343.jpeg",
+  },
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+  listOfUrgentNeed.forEach((obj) => {
+    const listOfCharityProgram = document.querySelector(
+      "#recent-charity .listofCharityProgram"
+    );
+    const progress = Math.min((obj.fundRaised / obj.requiredFund) * 100, 100);
+    const html = `
+    <div class="container">
+          <img class="photo" src=${
+            obj.imagePath
+          } alt="image of current program" />
+          <h4>
+           ${obj.title}
+          </h4>
+          <div>
+            <p class="avatar">
+              ${obj.fundRaiser.slice(0, 1)}
+            </p>
+            <span>
+              By ${obj.fundRaiser}
+            </span>
+          </div>
+          <div>
+            <span class="raisedMoney">$${obj.fundRaised}</span>raised out of ${
+      obj.requiredFund
+    }
+          </div>
+          <div class="progressBar">
+          <span style="
+          width:${progress}%
+          "></span>
+          </div>
+          <div class="contributionBtn">
+            <p>
+              <span>❤️</span> ${obj.contributions} contributions
+            </p>
+            <button>
+              Share
+              <img src="photos/shareIcon.svg" alt="">
+            </button>
+          </div>
+          <button class="goContributeBtn">
+            Contribute
+            <img src="photos/doubleArrow.png" alt="">
+          </button>
+        </div>
+    `;
+    listOfCharityProgram.insertAdjacentHTML("beforeend", html);
+  });
+
+  const contBtn = document.querySelectorAll(
+    "#recent-charity .listofCharityProgram .goContributeBtn"
+  );
+  contBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setTimeout(() => {
+        alert("Thank you so much for your contribution. It means a lot");
+      }, 500);
+    });
+  });
+});
