@@ -985,19 +985,17 @@ a {
   margin-top: 0px;
 }
 .causes .container {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 20px;
   width: 90%;
   cursor: pointer;
+  gap: 20px;
 }
 .causes .container .details {
   display: flex;
   flex-direction: column;
-  margin: 10px 15px;
-  width: 31%;
-  /* border: 1px solid #222; */
+  width: 100%;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   padding: 15px;
