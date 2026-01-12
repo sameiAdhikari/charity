@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ------------------------------------go to top button--------------------------------------------------
-  const goToTop = document.querySelector("#goto-top button");
+  const goToTop = document.querySelector("footer .mainFooter .aside button");
   goToTop.addEventListener("click", () => {
     const header = document.querySelector("header");
     header.scrollIntoView({
@@ -206,9 +206,19 @@ dollarBtn.forEach((btn) => {
   });
 });
 
+amountInput.addEventListener("input", (e) => {
+  e.target.value = e.target.value.replace(/\D/g, "");
+});
+
 donationBtn.addEventListener("click", () => {
-  document.querySelector("#message").style.display = "flex";
-  document.body.style.overflow = "hidden";
+  if (amountInput.value === "") {
+    amountInput.focus();
+    return;
+  } else {
+    document.querySelector("#message").style.display = "flex";
+    document.body.style.overflow = "hidden";
+    amountInput.value = "";
+  }
 });
 
 const messageCancelBtn = document.querySelector("#message .cancel-btn");
@@ -317,4 +327,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 500);
     });
   });
+});
+
+const browseAll = document.querySelector("#browseAll button");
+browseAll.addEventListener("click", () => {
+  browseAll.innerHTML = "Browsering All...";
+  setTimeout(() => {
+    browseAll.innerHTML = "Browse All Fundraiser";
+  }, 1000);
 });

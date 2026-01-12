@@ -3,14 +3,115 @@
 footer {
   position: relative;
   width: 100%;
-  height: 35vh;
-  background-color: #03152c;
+  background-color: var(--primary-color);
+  border-radius: 40px 40px 0px 0px;
+  color: #fff;
 }
-footer .payment img {
+footer .mainFooter {
+  padding: 60px 40px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+footer .mainFooter .aside {
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+footer .mainFooter .aside h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 60%;
+  text-align: center;
+}
+footer .mainFooter .aside h2 img {
+  width: 100px;
+  height: 50px;
+}
+footer .mainFooter .aside .socialMedia {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+footer .mainFooter .aside .socialMedia i {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+footer .mainFooter .aside div.button {
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /* margin-top: 10px; */
+}
+footer .mainFooter .aside div.button i {
+  font-size: 1.5rem;
+}
+footer .mainFooter .aside button {
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  background-color: transparent;
   width: 100%;
   cursor: pointer;
 }
-.footer-part {
+footer .mainFooter .aside div.button:hover {
+  box-shadow: 1px 1px 8px rgba(255, 255, 255, 0.5);
+}
+
+footer .mainFooter .titleLink {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+footer .mainFooter .titleLink div {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding-left: 100px;
+}
+footer .mainFooter .titleLink div p {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: underline;
+}
+footer .mainFooter .titleLink div a {
+  text-decoration: none;
+  color: #ece7e7;
+  font-size: 1.1rem;
+}
+footer .mainFooter .titleLink div a:hover,
+footer .mainFooter .titleLink div a.linkActive {
+  text-decoration: underline;
+}
+footer .copy-right-part {
+  background-color: var(--footer-color);
+}
+footer .copy-right-part {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0px;
+}
+footer .copy-right-part span {
+  padding: 0px 10px;
+  border-radius: 5px;
+}
+/* .footer-part {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -39,7 +140,7 @@ footer .footer-part .footer-list div a {
 }
 footer .footer-part .footer-list div a:hover {
   color: #0d8b8b;
-}
+} */
 
 footer .copy-right {
   display: flex;
@@ -100,19 +201,6 @@ footer .copy-right select {
 footer .copy-right select option {
   color: #222;
   cursor: pointer;
-}
-
-footer .copy-right-part {
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  margin: 10px auto;
-  padding: 30px 0px 10px;
-}
-footer .copy-right-part span {
-  border: 1px solid #62676c;
-  padding: 5px 10px;
-  border-radius: 5px;
 }
 
 footer .footer-layer {
@@ -201,7 +289,7 @@ footer .contact-form .content-side .signup-with {
   cursor: pointer;
 }
 footer .contact-form .content-side .signup-with span {
-  color:#2d22c7;
+  color: #2d22c7;
 }
 footer .contact-form .content-side .signup-with .fa-facebook {
   color: rgb(45, 20, 228);
@@ -237,7 +325,7 @@ footer .contact-form .content-side .input-password input {
   height: 2.5rem;
   padding: 10px 15px;
   border: 1px solid #ccc;
-  outline:none;
+  outline: none;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -321,7 +409,7 @@ footer .contact-form .content-side .input-password input {
 }
 
 /*------------------------------------------------Privacy policy section-------------- ------------------------------*/
-.privacy-policy{
+.privacy-policy {
   padding: 20px 20px;
   background-color: rgba(0, 0, 250, 0.1);
   /* background-color: lightgrey; */
@@ -338,7 +426,8 @@ footer .contact-form .content-side .input-password input {
 .privacy-policy h2 {
   margin: 10px 0px;
 }
-.privacy-policy span,.privacy-policy p {
+.privacy-policy span,
+.privacy-policy p {
   font-size: 0.9rem;
 }
 .privacy-policy h4 {

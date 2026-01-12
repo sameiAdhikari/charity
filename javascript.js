@@ -30,20 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   //------------------------------------footer contact page--------------------------------------------------
 
-  const footerLayer = document.querySelector(".footer-layer");
-  const footerLayerCancel = document.querySelector(
-    ".footer-layer .content-side form .cancel-icon i"
-  );
-  const contactUs = document.querySelector("footer .footer-part .contact-us a");
-  contactUs.addEventListener("click", (e) => {
-    e.preventDefault();
-    footerLayer.style.display = "block";
-    body.classList.add("no-scroll");
-  });
-  footerLayerCancel.addEventListener("click", () => {
-    footerLayer.style.display = "none";
-    body.classList.remove("no-scroll");
-  });
+  // const footerLayer = document.querySelector(".footer-layer");
+  // const footerLayerCancel = document.querySelector(
+  //   ".footer-layer .content-side form .cancel-icon i"
+  // );
+  // const contactUs = document.querySelector("footer .footer-part .contact-us a");
+  // contactUs.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   footerLayer.style.display = "block";
+  //   body.classList.add("no-scroll");
+  // });
+  // footerLayerCancel.addEventListener("click", () => {
+  //   footerLayer.style.display = "none";
+  //   body.classList.remove("no-scroll");
+  // });
 
   // -----------------------------footer contact form validation----------------------------------------------------------
   const email = document.querySelector(
@@ -81,9 +81,19 @@ document.addEventListener("DOMContentLoaded", () => {
       contactForm.submit();
     }
   };
+  const footerLink = document.querySelectorAll(
+    "footer .mainFooter .titleLink div a "
+  );
+  // footerLink.forEach((link) => {
+  //   link.addEventListener("click", (e) => {
+  //     link.classList.remove("linkActive");
+  //     e.currentTarget.classList.add("linkActive");
+  //     console.log(e.currentTarget);
+  //   });
+  // });
 
-  signIn.addEventListener("click", logInValidation);
-  signIn.addEventListener("submit", logInValidation);
+  // signIn.addEventListener("click", logInValidation);
+  // signIn.addEventListener("submit", logInValidation);
 
   //------------------------------------validation to short letters to show less words--------------------------------------------------
   const paragraph = document.querySelectorAll(".causes .container .details p");

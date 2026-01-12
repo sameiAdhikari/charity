@@ -22,6 +22,7 @@
   width: 100dvw;
   height: 96vh;
   background: #ebefff;
+  background-color: var(--primary-overlay);
   z-index: 1;
   border-bottom-right-radius: 150px;
   border-bottom-left-radius: 150px;

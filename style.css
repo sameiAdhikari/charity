@@ -11,6 +11,9 @@
   --secondary-background-color: #e1e6ee;
   --primary-yellow-color: #f6d615;
   --secondary-yellow-color: #f7d21f;
+  --primary-overlay: #ebefff;
+  --header-background-color: #f7f2ef;
+  --footer-color: #d99934;
 }
 .section-m {
   margin: 40px 0px;
@@ -32,13 +35,20 @@ a {
   z-index: 999;
   padding: 0px 50px;
 }
+.header .title-image {
+  display: flex;
+  align-items: center;
+  /* padding: 14px; */
+  padding: 17px 0px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 .header .title-image img {
-  width: 150px;
-  height: 4.5rem;
+  width: 80px;
+  height: 2.6rem;
   cursor: pointer;
 }
 .menu-bar {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +84,7 @@ a {
 .menu-bar ul li a.active::after {
   width: 100%;
 }
-.menu-bar a button {
+.header form a button {
   padding: 6px 25px;
   border: none;
   outline: none;
@@ -85,7 +95,7 @@ a {
   font-size: 1.2rem;
   transition: 0.1s ease-in;
 }
-.menu-bar a button:hover {
+.header form a button:hover {
   /* background: var(--secondary-color); */
   box-shadow: 1px 1px 3px #000;
   opacity: 0.9;
@@ -412,7 +422,6 @@ a {
   font-weight: bold;
   transition: 0.2s ease-in;
 }
-
 #message {
   position: fixed;
   top: 0;
@@ -448,6 +457,25 @@ a {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 5px;
+}
+
+#browseAll {
+  width: 100%;
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#browseAll button {
+  padding: 15px 20px;
+  background-color: var(--primary-yellow-color);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 15rem;
 }
 /*--------------------------------------------------------------------recent-charity section-------------------------------*/
 
@@ -703,21 +731,20 @@ a {
 /*--------------------------------story section-------------------------------*/
 
 .story-section {
-  width: 100%;
+  width: 70%;
   color: #645757;
-  height: 80vh;
-  background-color: rgb(202, 224, 224);
-  background: linear-gradient(to bottom, #c2c2c8, #99dcf3);
-  padding: 50px;
+  height: 75vh;
+  margin: auto;
+  border-radius: 10px;
   display: flex;
   justify-content: flex-start;
-  padding-right: 100px;
   align-items: center;
+  margin-top: 130px;
 }
 .story-section .left-side {
   width: 50%;
   height: 100%;
-  padding-left: 8em;
+  /* padding-left: 8em; */
 }
 .story-section .left-side img {
   width: 100%;
@@ -728,20 +755,19 @@ a {
   width: 50%;
   line-height: 1.4rem;
   height: 100%;
-  margin-right: 80px;
   margin-left: 20px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 .story-section .right .top {
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
   padding: 30px;
   width: 100%;
   height: 50%;
-  margin: 10px 0px;
+  /* margin: 10px 0px; */
   border-radius: 10px;
 }
 .story-section .right h1 {
@@ -759,7 +785,8 @@ a {
 
 .story-section .right .bottom .bottom-left {
   /* background-color: #fff; */
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); */
   border-radius: 10px;
   padding: 30px;
   height: 100%;
@@ -771,6 +798,18 @@ a {
 }
 .story-section .right .bottom .bottom-left div {
   margin-top: 10px;
+}
+.story-section .right .bottom .bottom-right {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
 }
 .story-section .right .bottom .bottom-right .bottom-right-div {
   margin-bottom: 30px;
@@ -786,20 +825,6 @@ a {
   display: flex;
   flex-direction: column;
 }
-.story-section .right .bottom .bottom-right {
-  /* background-color: #fff; */
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* padding: 30px; */
-  text-align: center;
-  align-items: center;
-  height: 100%;
-  width: 50%;
-}
 
 .story-section h4,
 .story-section h2 {
@@ -811,21 +836,22 @@ a {
 .founder-profile {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  width: 90%;
+  gap: 0px;
+  width: 100%;
   margin: 50px auto;
   height: 90vh;
   cursor: pointer;
   color: #fff;
-  padding: 60px 20px;
-  background: linear-gradient(to bottom, #99dcf3, #c2c2c8);
+  padding: 60px 120px;
+  background-color: var(--primary-overlay);
+  /* background: linear-gradient(to bottom, #99dcf3, #c2c2c8); */
   border-radius: 10px;
 }
 .founder-profile .image {
   width: 50%;
 }
 .founder-profile .image img {
-  width: 70%;
+  width: 80%;
   height: 100%;
   border-radius: 15px;
   float: right;
@@ -960,10 +986,10 @@ a {
 }
 .causes .container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-top: 20px;
-  width: 100%;
+  width: 90%;
   cursor: pointer;
 }
 .causes .container .details {
@@ -971,9 +997,10 @@ a {
   flex-direction: column;
   margin: 10px 15px;
   width: 31%;
-  border: 1px solid #222;
+  /* border: 1px solid #222; */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
-  padding: 5px;
+  padding: 15px;
 }
 .causes .container .details img {
   width: 100%;
@@ -1377,14 +1404,15 @@ a {
 
 .pay-securely .heading {
   text-align: center;
-  margin: 20px 0px;
+  margin: 10px 0px;
+  font-size: 1.2rem;
 }
 .pay-securely .payment {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 0px 60px 0px;
+  margin: 20px 0px 0px 0px;
 }
 .pay-securely .payment .inner-box {
   display: flex;
@@ -1433,42 +1461,18 @@ a {
 }
 .pay-securely .container {
   display: flex;
-  width: 80%;
+  width: 95%;
   margin: auto;
   justify-content: center;
+  gap: 20px;
 }
 .pay-securely .container .box {
-  width: 23%;
+  width: 24%;
   margin: 0px 10px;
-  padding: 15px 25px;
-  background-color: #f5f4f4;
+  padding: 35px 25px;
+  background-color: var(--primary-overlay);
   font-size: 1.2rem;
   border-radius: 25px;
-}
-
-/*------------------------go to top section---------------------------------*/
-
-#goto-top {
-  width: 100%;
-  height: 4rem;
-  margin: 10px 0px 0px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#goto-top button {
-  padding: 15px 40px;
-  color: #fff;
-  border-radius: 5px;
-  outline: none;
-  background-color: #1d324d;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: 0.2s ease-in;
-}
-#goto-top button:hover {
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  border: 1px solid #000000;
 }
 
 /* -------------------video section-------------------- */
@@ -1495,11 +1499,12 @@ a {
 /* ------------------- ---------------title for map section------------------------------------- */
 .title-for-map {
   width: 100%;
-  height: 25vh;
+  height: 7vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 30px;
 }
 .title-for-map .updates {
   display: flex;
@@ -1523,20 +1528,22 @@ a {
   background-color: #e03737;
   border-radius: 50%;
 }
-.title-for-map .title {
-  margin: 50px 0px 20px 0px;
+
+/* ------------------- -------------------------------------donation title section------------------------------------------------ */
+
+#donation-title {
+  margin: 80px 0px 20px 0px;
   text-align: center;
 }
-.title-for-map .title h3 {
+#donation-title h3 {
   font-size: 1.6rem;
   margin-bottom: 10px;
 }
-
 /* ------------------- -------------------------------------map section------------------------------------------------ */
 #map {
   width: 85%;
   height: 70vh;
-  margin: 10px auto 40px;
+  margin: 30px auto 10px;
   background-color: #eff2f0;
   display: flex;
   justify-content: flex-start;
@@ -1665,7 +1672,7 @@ a {
   align-items: center;
   width: 100%;
   padding: 2rem 5rem;
-  background: linear-gradient(to bottom, #7bb4ff, #fff);
+  /* background: linear-gradient(to bottom, #7bb4ff, #fff); */
 }
 .container-p .container .left-side {
   display: flex;

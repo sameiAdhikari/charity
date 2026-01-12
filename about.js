@@ -76,13 +76,13 @@ birthdayPresents.addEventListener("click", () => {
 
 // -------------------------------------date timing setting function-----------------------------
 
-document.addEventListener('DOMContentLoaded',()=>{
-  let setDate = ()=>{
-    const span = document.querySelector('.about-body .container .left-side .description .paragraph-details .date');
-  let date = new Date();
-  let time = date.toDateString();
-  let time2 = date.toTimeString();
-  span.textContent =`${time}   ${time2}`;
-  };
-  setInterval(setDate, 1000);
-})
+// document.addEventListener('DOMContentLoaded',()=>{
+//   let setDate = ()=>{
+//     const span = document.querySelector('.about-body .container .left-side .description .paragraph-details .date');
+//   let date = new Date();
+//   let time = date.toDateString();
+//   let time2 = date.toTimeString();
+//   span.textContent =`${time}   ${time2}`;
+//   };
+//   setInterval(setDate, 1000);
+// })
