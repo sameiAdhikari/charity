@@ -1,352 +1,293 @@
-.donation-form {
-  width: 100%;
-  height: 90vh;
+#login-form {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: rgba(0, 0, 0, 0.2); */
+  max-width: 100dvw;
+  height: 100dvh;
+  background-color: var(--secondary-background-color);
 }
-.donation-form .pop-up-for-information {
-  color: #ff0000;
-  display: none;
+#login-form .container {
+  margin-top: 75px;
+  min-width: 65%;
+  min-height: 50%;
+  background-color: #fff;
+  border-radius: 7px;
+  display: flex;
 }
-.donation-form form {
-  width: 40%;
-  padding: 20px;
-  background: linear-gradient(to right, #a2c124, #32f175);
+#login-form .container .left-form {
+  width: 50%;
+  height: 550px;
+  overflow: hidden;
+  position: relative;
 }
-.donation-form form div {
+#login-form .container .left-form img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+#login-form .container .left-form .overlay {
+  position: absolute;
+  inset: 0;
+  /* background: rgba(0, 0, 0, 0.6); */
+  background-color: var(--primary-color);
+  opacity: 30%;
+  z-index: 2;
+}
+#login-form .container .loginFormContainer {
+  width: 50%;
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 30px 60px;
 }
-.donation-form form div label {
-  display: flex;
-}
-.donation-form form div label span {
-  color: #db1414;
-  font-size: 1.2rem;
+#login-form .container .createFormContainer {
+  width: 50%;
   display: none;
-  margin-left: 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 30px 60px;
 }
-.donation-form form div input {
-  margin-top: 2px;
-  margin-bottom: 14px;
+#login-form .container .right-form .title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
-
-.donation-form form div input[type="text"] {
+#login-form .container .right-form .nameNsurname {
   width: 100%;
-  height: 1.7rem;
-  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+#login-form .container .right-form .input-wraper {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 3px solid var(--secondary-background-color);
+}
+#login-form .container .right-form .password {
+  margin-bottom: 10px;
+}
+#login-form .container .right-form .input-wraper input {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  font-size: 1rem;
+  padding: 2px 10px;
   outline: none;
-  border: 2px solid #3f5a41;
-  background-color: #dad7e4;
+  border: none;
+  background: transparent;
+}
+#login-form .container .right-form .input-wraper span {
+  transition: all 0.3s ease-out;
+  position: absolute;
+  bottom: 4px;
+  left: 10px;
+  width: 100%;
+  background: transparent;
+}
+#login-form .container .right-form .checkbox-wraper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  margin: 0px;
+}
+#login-form .container .right-form .checkbox-wraper .fakeCheckbox,
+#signAgreement > div {
+  border: 2px solid var(--secondary-background-color);
   border-radius: 3px;
   cursor: pointer;
-}
-.donation-form form .select-amount {
-  margin-top: -20px;
-}
-.donation-form form .select-amount {
-  display: flex;
-  flex-direction: row;
-}
-.donation-form form .self-enter-amount {
-  display: none;
-  flex-direction: row;
-}
-.donation-form form .select-amount div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  margin-right: 40px;
-}
-.donation-form form .select-amount div input {
-  margin-right: 5px;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  margin-bottom: 0px;
-  cursor: pointer;
-}
-.donation-form form .self-enter-amount span {
-  width: 100%;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-.donation-form form .gift,
-.donation-form form .gift {
-  margin-top: -20px;
-}
-.donation-form form .gift,
-.donation-form form .gift div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.donation-form form .gift div input {
-  margin-right: 10px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-.donation-form form .proceed-to-pay button {
-  padding: 8px;
-  font-size: 1.3rem;
-  font-weight: bold;
-  background-color: #090f34;
-  color: #fff;
-  outline: none;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.video-clip {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: -1;
-}
-.video-clip::before {
-  content: "hello";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-/*-----------------------------------------------------------both form section----------------------------------*/
-
-.both-form {
-  width: 100%;
-  height: 100vh;
+  width: 17px;
+  height: 17px;
   position: relative;
-  background-image: url(photos/background.jpeg);
-  background-size: cover;
 }
+/* #signAgreement > div{
 
-.both-form .form  {
-  width: 70%;
-  height: 70vh;
-  display: flex;
+} */
+#login-form .container .right-form .checkbox-wraper .fakeCheckbox input,
+#signAgreement > div input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin: 0px;
+}
+#login-form .container .right-form .checkbox-wraper .fakeCheckbox .fa-check,
+#signAgreement > div .fa-check {
+  color: white;
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  overflow: hidden;
-  transition: 0.9s ease-in;
- 
- 
+  font-size: 1rem;
 }
- .both-form .form .signin-side{
+#login-form .container .right-form .checkbox-wraper span {
+  font-size: 0.8rem;
+}
+#login-form .container .right-form .checkbox-wraper span a {
+  font-size: 0.9rem;
+  color: blue;
+  text-decoration: underline;
+}
+#login-form .container .right-form .checkbox-wraper .recovery-title {
   width: 100%;
-  position: relative;
-  top: 0%;
-  left: 0%;
   display: flex;
-  transition: 0.9s ease-in;
-  max-height: 69vh;
-}
-.both-form .form .register-side {
-  display:none;
-  position:relative;
-  width: 100%;
-  top: 0%;
-  left:0%;
-  transition: 0.9s ease-in;
-  max-height: 69vh;
-
-} 
-
-.both-form .signin-side video {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 108%;
-  height: 100%;
-  z-index: -1;
-}
-.both-form .register-side video {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 92%;
-  height: 100%;
-  z-index: -1;
-}
-.both-form .form .signin-side .login-form {
-  width: 50%;
-  /* margin-right: 25px; */
-  background-color: #fff;
-  padding: 30px 20px;
-  border-radius: 20px 0px 0px 20px;
-}
-.both-form .form .register-side .login-form {
-  width: 50%;
-  background-color: #fff;
-  padding: 30px 20px;
-  border-radius: 0px 20px 20px 0px;
-}
-.both-form .form .login-form .heading {
-  width: 100%;
-  text-align: center;
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-}
-.both-form .form .login-form form .input input {
-  width: 100%;
-  text-align: start;
-  font-size: 1.3rem;
-  margin-bottom: 1.3rem;
-  padding: 10px 15px;
-  background-color: #ddd;
-  border: none;
-  outline: none;
-  border-radius: 15px;
-}
-
-.both-form .form .login-form form .input div {
-  color: red;
-  margin-top: -10px;
-  margin-bottom: 20px;
-}
-.both-form .form .login-form form .forget-password {
-  position: relative;
-  display: flex;
-  width: 80%;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 20px;
 }
-.both-form .form .login-form form .forget-password input {
-  width: 15px;
-  height: 15px;
+#login-form
+  .container
+  .right-form
+  .checkbox-wraper
+  .recovery-title
+  .forgetPassword {
+  color: #2382e8;
 }
-.both-form .form .login-form form .forget-password .rm {
-  margin-left: 7px;
-}
-.both-form
-  .form
-  .login-form
-  form
-  .forget-password
-  input[type="checkbox"]:checked {
-  content: "";
-  /* position: absolute; */
-  /* top: 4px; */
-  /* left: 0px; */
-  width: 15px;
-  height: 15px;
-  padding-right: 20px;
-  border: solid #4caf50;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-.both-form .form .login-form form .forget-password .forget {
-  color: #ff0000;
-  cursor: pointer;
-}
-.both-form .form .login-form form .button {
-  text-align: center;
-  margin: 30px 0px 10px;
-}
-.both-form .form .login-form form .button button {
-  padding: 10px 70px;
-  background-color: #0022ff;
-  color: #fff;
-  outline: none;
-  border: none;
-  border-radius: 35px;
-  font-size: 1.3rem;
-  cursor: pointer;
-  margin: 10px 0px;
-}
-.both-form .form .login-form form .login-with {
-  text-align: center;
-  margin: 25px 0px;
-}
-.both-form .form .login-form form .icons {
-  text-align: center;
-  margin-top: 20px;
-}
-.both-form .form .login-form form .icons img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  padding: 8px;
-  margin: 0px 10px;
-  box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.9);
-  cursor: pointer;
-}
-.register-drive-page {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: #fff;
-  padding: 0px 20px;
-  background: rgba(0, 0, 0, 0.7);
- 
-}
-.login-drive-page {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: #fff;
-  padding: 0px 20px;
-  background: rgba(0, 0, 0, 0.5);
- 
-}
-.register-drive-page h1,.login-drive-page h1 {
-  font-size: 3rem;
-  text-align: center;
-}
-.register-drive-page p,.login-drive-page p {
-  margin: 15px 0px;
-  font-size: 1.4rem;
-  text-align: center;
-}
-.register-drive-page button,.login-drive-page button {
-  border: 1px solid #fff;
-  outline: none;
-  background: transparent;
-  border-radius: 20px;
-  padding: 5px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.4rem;
-  cursor: pointer;
-  color: #fff;
-}
-.register-drive-page button img{
-  width: 30px;
-  height: 15px;
-  margin-left: 10px;
-}
-.both-form .form .signup-form {
-  width: 50%;
-  padding: 20px;
-}
-.both-form .form .register-side .login-form form .button {
-  text-align: center;
-  margin: 10px 0px 10px;
-}
-/* .both-form .form .register-side .login-form form .input input {
+#login-form .container .right-form .buttons {
   width: 100%;
-  text-align: start;
-  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0px;
+  /* padding: 30px; */
+}
 
-  padding: 10px 15px;
-  background-color: #ddd;
+#login-form .container .right-form .buttons button {
+  min-width: 40%;
+  border: 1px solid var(--secondary-background-color);
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+#createAccountBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+#createAccountBtn button.login {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 15px;
   border: none;
   outline: none;
-  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+#createAccountBtn button.login:hover {
+  scale: 1.05;
+}
+#createBtn button {
+  font-size: 1.05rem;
+  width: 100%;
+}
+#createAccountBtn button {
+  width: 100%;
+}
+/* #createAccountBtn > button.login {
+  padding: 20px;
 } */
+#login-form
+  > div
+  > div.right-form.loginFormContainer
+  > div.buttons
+  > button:hover,
+#login-form
+  > div
+  > div.right-form.loginFormContainer
+  > div.buttons.accountButtons
+  > div
+  > button:hover,
+#createBtn > button.login:hover {
+  box-shadow: 0px 0px 5px black;
+  /* scale: 0.5; */
+}
+#login-form .container .right-form .buttons .login {
+  padding: 10px 20px;
+  background: linear-gradient(to right, #2382e8, #892ff3 90%);
+  color: #fff;
+}
+#login-form .container .right-form .buttons .create {
+  padding: 9px 20px;
+  background-color: white;
+}
+#login-form .container .right-form .buttons div {
+  max-height: 50px;
+  background: linear-gradient(to right, #2382e8, #892ff3 90%);
+  border-radius: 25px;
+  padding: 1px;
+}
+#login-form .container .right-form .accountButtons .submit {
+  padding: 10px 30px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  background-color: #2382e8;
+  color: #fff;
+  float: right;
+  cursor: pointer;
+}
+#login-form .container .right-form .accountButtons .submit:hover {
+  box-shadow: 1px 1px 3px #222;
+}
+#login-form .container .right-form .divider {
+  width: 100%;
+  height: 2px;
+  border-radius: 5px;
+  background-color: var(--secondary-background-color);
+  position: relative;
+  margin: 20px 0px;
+}
+#login-form .container .right-form .divider span {
+  box-sizing: border-box;
+  display: block;
+  max-width: 29px;
+  max-height: 23px;
+  position: absolute;
+  font-size: 0.8rem;
+  padding: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondary-background-color);
+  border-radius: 5px;
+}
+#login-form .container .right-form .withGoogle {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid blue;
+  padding: 0px 10px;
+  border-radius: 20px;
+  background-color: var(--secondary-background-color);
+  cursor: pointer;
+  /* margin-top: 10px; */
+}
+#login-form .container .right-form .withGoogle:hover {
+  box-shadow: 1px 1px 3px black;
+}
+#login-form .container .right-form .withGoogle img {
+  width: 30px;
+  height: 30px;
+}
+#login-form .container .right-form .withGoogle button {
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+}

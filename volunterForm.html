@@ -13,6 +13,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
     />
+
+    <script src="index.js" defer></script>
+    <script src="volunteerform.js" defer></script>
+    <!-- <script src="javascript.js" defer></script> -->
   </head>
   <body>
   <header>
@@ -30,11 +34,11 @@
           </ul>
         </div>
         <form action="">
-          <a href="donation.html"><button>Donate</button></a>
+          <a href="donation.html"><button type="button">Donate</button></a>
         </form>
       </div>
     </header>
-
+    <div class="scroll-bar"></div>
     <section id="volunterForm">
       <form action="">
         <h3>Membership Application form for volunteers</h3>
@@ -74,7 +78,6 @@
           <div class="label"></div>
           <div class="details">
             <input type="text" placeholder="Postal/Zip code" />
-            <!-- <input type="text" placeholder="Last Name"> -->
             <select name="country" id="country">
               <option value="">Nepal</option>
               <option value="">Malta</option>
@@ -85,7 +88,7 @@
         </div>
         <div class="inputs">
           <div class="label">
-            Comments <br /><br />
+            Comments <br />
             <p>
               Let us know if there is more you want to add to our Member- ship
               Application Form
@@ -104,11 +107,13 @@
         <div class="inputs terms-and-condition">
           <div class="label">Terms and condition <span>*</span></div>
           <div class="termsNcondition">
-            <input type="checkbox" placeholder="First Name" />
+            <div class="checkbox">
+              <input type="checkbox" />
+            </div>
             <p>I agreed to the <span>terms and condition</span></p>
           </div>
         </div>
-        <div class="button"><button>Become a member</button></div>
+        <div class="button"><button type="button">Become a member</button></div>
       </form>
     </section>
     <section class="pay-securely">
@@ -186,17 +191,17 @@
           <div>
             <p role="title">SiteMap</p>
             <a href="index.html" class="linkActive">Homepage<a>
-            <a href="technology.html">Technology<a>
-            <a href="resource.html">Resources & News</a>
-            <a href="career.html">Career</a>
-            <a href="portal.html">Portal</a>
+            <a href="">Technology<a>
+            <a href="">Resources & News</a>
+            <a href="">Career</a>
+            <a href="">Portal</a>
           </div>
           <div>
             <p role="title">Legal</p>
             <a href="privacypolicy.html">Privacy Policy</a>
-            <a href="cookie.html">Cookie Policy</a>
-            <a href="termsAndCondition.html">Terms & Conditions</a>
-            <a href="license.html">License</a>
+            <a href="">Cookie Policy</a>
+            <a href="">Terms & Conditions</a>
+            <a href="">License</a>
           </div>
         </div>
       </div>
@@ -207,11 +212,4 @@
       </div>
     </footer>
   </body>
-  <!-- <script src="script.js"></script>
-  <script src="FetchImage.js"></script>-->
-  <!-- <script src="index.js"></script>  -->
-  <!-- <script defer src="javascript.js"></script> -->
-   <script src="footer.js"></script>
-  <script src="volunteerform.js"></script>
-  <script></script>
 </html>

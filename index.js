@@ -1,108 +1,53 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //------------------------------------learn more button function--------------------------------------------------
-
-  // const learnMore = document.querySelector(".main-body .text .learn-more");
-  // const learnMoreDescription = document.querySelector(".main-body .description");
-  // const learnMoreCancelBtn = document.querySelector(".main-body .description i");
-  // learnMore.addEventListener("click", () => {
-  //   learnMoreDescription.style.display = "block";
-  // });
-  // learnMoreCancelBtn.addEventListener("click", () => {
-  //   learnMoreDescription.style.display = "none";
-  // });
-
-  //------------------------------------profile background image change--------------------------------------------------
-
-  // let backgroundImage = document.querySelector(".main-body .main-section img");
-  // let pointer1 = document.querySelector(".pointer1");
-  // let pointer2 = document.querySelector(".pointer2");
-  // let pointer3 = document.querySelector(".pointer3");
-
-  // pointer1.addEventListener("click", () => {
-  //   backgroundImage.src = "photos/np.png";
-  //   pointer1.classList.add("pointer");
-  //   pointer2.classList.remove("pointer");
-  //   pointer3.classList.remove("pointer");
-  // });
-  // pointer2.addEventListener("click", () => {
-  //   backgroundImage.src = "photos/np1.png";
-  //   pointer2.classList.add("pointer");
-  //   pointer1.classList.remove("pointer");
-  //   pointer3.classList.remove("pointer");
-  // });
-  // pointer3.addEventListener("click", () => {
-  //   backgroundImage.src = "photos/np2.png";
-  //   pointer3.classList.add("pointer");
-  //   pointer2.classList.remove("pointer");
-  //   pointer1.classList.remove("pointer");
-  // });
-  //------------------------------------icons function for landing page--------------------------------------------------
-  // const facebook = document.querySelector(".practise .icons .fa-facebook-f");
-  // const instagram = document.querySelector(".practise .icons .fa-instagram");
-  // const telegram = document.querySelector(".practise .icons .telegram");
-  // const youtube = document.querySelector(".practise .icons .youtube");
-  // facebook.addEventListener("click", () => {
-  //   window.open("https://www.facebook.com/samie.adhikari");
-  // });
-  // instagram.addEventListener("click", () => {
-  //   window.open("https://www.instagram.com/shrijana.adhikari.5817/");
-  // });
-  // telegram.addEventListener("click", () => {
-  //   window.open("https://telegram.org");
-  // });
-  // youtube.addEventListener("click", () => {
-  //   window.open("https://www.youtube.com");
-  // });
-
   //------------------------------------welcome to charity function--------------------------------------------------
   const firstChild = document.querySelector(
-    ".welcome-to-charity .left .first-child"
+    ".welcome-to-charity .left .first-child",
   );
   const thirdChild = document.querySelector(
-    ".welcome-to-charity .left .third-child"
+    ".welcome-to-charity .left .third-child",
   );
   const forthChild = document.querySelector(
-    ".welcome-to-charity .left .forth-child"
+    ".welcome-to-charity .left .forth-child",
   );
   const scholarship = document.querySelector(
-    ".welcome-to-charity .scholarship-section"
+    ".welcome-to-charity .scholarship-section",
   );
   const scholarshipCancel = document.querySelector(
-    ".welcome-to-charity .scholarship-section .fa-xmark"
+    ".welcome-to-charity .scholarship-section .fa-xmark",
   );
 
-  firstChild.addEventListener("click", (e) => {
+  firstChild?.addEventListener("click", (e) => {
     window.location.href = "becomevolunter.html";
   });
-  thirdChild.addEventListener("click", () => {
+  thirdChild?.addEventListener("click", () => {
     window.location.href = "donation.html";
   });
-  forthChild.addEventListener("click", () => {
+  forthChild?.addEventListener("click", () => {
     scholarship.style.right = "0px";
   });
-  scholarshipCancel.addEventListener("click", () => {
+  scholarshipCancel?.addEventListener("click", () => {
     scholarship.style.right = "-500px";
   });
   //------------------------------------application section for donar and organizers--------------------------------------------------
 
   const organisers = document.querySelector(
-    ".application .heading .first-heading"
+    ".application .heading .first-heading",
   );
   const donars = document.querySelector(
-    ".application .heading .second-heading"
+    ".application .heading .second-heading",
   );
   const organisersBox = document.querySelector(
-    ".application .heading .first-heading"
+    ".application .heading .first-heading",
   );
   const donarsBox = document.querySelector(
-    ".application .right-side .body .for-donators"
+    ".application .right-side .body .for-donators",
   );
-  donars.addEventListener("click", () => {
+  donars?.addEventListener("click", () => {
     donars.style.backgroundColor = "#3d416e";
     organisers.style.backgroundColor = "#0a1525";
     donarsBox.style.left = "0%";
   });
-  organisers.addEventListener("click", () => {
+  organisers?.addEventListener("click", () => {
     donars.style.backgroundColor = "#0a1525";
     organisers.style.backgroundColor = "#3d416e";
     donarsBox.style.left = "100%";
@@ -111,10 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // ------------------------------------go to top button--------------------------------------------------
   const goToTop = document.querySelector("footer .mainFooter .aside button");
   goToTop.addEventListener("click", () => {
-    const header = document.querySelector("header");
-    header.scrollIntoView({
+    window.scrollTo({
+      top: 0,
+      left: 0,
       behavior: "smooth",
-      block: "start",
     });
   });
 
@@ -156,20 +101,45 @@ window.addEventListener("scroll", () => {
 
 //  --------------------------------- subscription button function--------------------------------------------------
 const subscriptionButtons = document.querySelectorAll(
-  "#hero-section .payment-list .payment-subscriptions-type button"
+  "#hero-section .payment-list .payment-subscriptions-type button",
+);
+
+const priceButtons = document.querySelectorAll(
+  "#hero-section .payment-list .price-options .options button",
 );
 subscriptionButtons.forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (e) => {
     subscriptionButtons.forEach((btn) => btn.classList.remove("active"));
     button.classList.add("active");
+    const duration = button.getAttribute("data-bundlePack");
+    if (duration === "monthly") {
+      priceButtons.forEach((btn, index) => {
+        const monthlyPrices = [100, 150, 200, 1000, "other"];
+        btn.value = monthlyPrices[index];
+        btn.textContent =
+          typeof monthlyPrices[index] === "string"
+            ? "Other"
+            : `$${monthlyPrices[index]}`;
+      });
+    }
+    if (duration === "oneTime") {
+      priceButtons.forEach((btn, index) => {
+        const monthlyPrices = [50, 100, 250, 500, "other"];
+        btn.value = monthlyPrices[index];
+        btn.textContent =
+          typeof monthlyPrices[index] === "string"
+            ? "Other"
+            : `$${monthlyPrices[index]}`;
+      });
+    }
   });
 });
 
 const dropDownBtn = document.querySelector(
-  "#hero-section .payment-list .price-options .currency-input .custom-select-dropdown button"
+  "#hero-section .payment-list .price-options .currency-input .custom-select-dropdown button",
 );
 
-dropDownBtn.addEventListener("click", () => {
+dropDownBtn?.addEventListener("click", () => {
   const dorpdownMenu = dropDownBtn
     .closest(".custom-select-dropdown")
     .querySelector("ul");
@@ -177,7 +147,7 @@ dropDownBtn.addEventListener("click", () => {
 });
 
 const dorpdownMenuList = document.querySelectorAll(
-  "#hero-section .payment-list .price-options .currency-input .custom-select-dropdown ul li"
+  "#hero-section .payment-list .price-options .currency-input .custom-select-dropdown ul li",
 );
 
 dorpdownMenuList.forEach((el) => {
@@ -191,13 +161,13 @@ dorpdownMenuList.forEach((el) => {
   });
 });
 const dollarBtn = document.querySelectorAll(
-  "#hero-section .payment-list .price-options .options button"
+  "#hero-section .payment-list .price-options .options button",
 );
 const amountInput = document.querySelector(
-  "#hero-section .payment-list .price-options .currency-input input"
+  "#hero-section .payment-list .price-options .currency-input input",
 );
 const donationBtn = document.querySelector(
-  "#hero-section .payment-list .price-options button.donateBtn"
+  "#hero-section .payment-list .price-options button.donateBtn",
 );
 dollarBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -206,11 +176,11 @@ dollarBtn.forEach((btn) => {
   });
 });
 
-amountInput.addEventListener("input", (e) => {
+amountInput?.addEventListener("input", (e) => {
   e.target.value = e.target.value.replace(/\D/g, "");
 });
 
-donationBtn.addEventListener("click", () => {
+donationBtn?.addEventListener("click", () => {
   if (amountInput.value === "") {
     amountInput.focus();
     return;
@@ -222,7 +192,7 @@ donationBtn.addEventListener("click", () => {
 });
 
 const messageCancelBtn = document.querySelector("#message .cancel-btn");
-messageCancelBtn.addEventListener("click", () => {
+messageCancelBtn?.addEventListener("click", () => {
   document.querySelector("#message").style.display = "none";
   document.body.style.overflow = "auto";
 });
@@ -270,7 +240,7 @@ const listOfUrgentNeed = [
 document.addEventListener("DOMContentLoaded", () => {
   listOfUrgentNeed.forEach((obj) => {
     const listOfCharityProgram = document.querySelector(
-      "#recent-charity .listofCharityProgram"
+      "#recent-charity .listofCharityProgram",
     );
     const progress = Math.min((obj.fundRaised / obj.requiredFund) * 100, 100);
     const html = `
@@ -291,8 +261,8 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div>
             <span class="raisedMoney">$${obj.fundRaised}</span>raised out of ${
-      obj.requiredFund
-    }
+              obj.requiredFund
+            }
           </div>
           <div class="progressBar">
           <span style="
@@ -314,23 +284,21 @@ document.addEventListener("DOMContentLoaded", () => {
           </button>
         </div>
     `;
-    listOfCharityProgram.insertAdjacentHTML("beforeend", html);
+    listOfCharityProgram?.insertAdjacentHTML("beforeend", html);
   });
 
   const contBtn = document.querySelectorAll(
-    "#recent-charity .listofCharityProgram .goContributeBtn"
+    "#recent-charity .listofCharityProgram .goContributeBtn",
   );
   contBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
-      setTimeout(() => {
-        alert("Thank you so much for your contribution. It means a lot");
-      }, 500);
+      window.location.href = "donation.html";
     });
   });
 });
 
 const browseAll = document.querySelector("#browseAll button");
-browseAll.addEventListener("click", () => {
+browseAll?.addEventListener("click", () => {
   browseAll.innerHTML = "Browsering All...";
   setTimeout(() => {
     browseAll.innerHTML = "Browse All Fundraiser";

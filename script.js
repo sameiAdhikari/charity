@@ -1,8 +1,6 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-
-
   const logo = document.querySelector("header .header div");
   const logoDetails = document.querySelector(".logo-details");
   logo.addEventListener("click", () => {
@@ -113,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     learnMoreDescription.style.display = "none";
     // body.classList.remove('no-scroll');
   });
- //---------------------------------------------- function to display contact form in footer----------------------------------------------
+  //---------------------------------------------- function to display contact form in footer----------------------------------------------
 
   const contactUs = document.querySelector("footer .contact-us");
   const footerForm = document.querySelector("footer .footer-layer");
@@ -235,3 +233,8 @@ pointer3.addEventListener("click", () => {
 // });
 
 // ---------------------------footer contact form validation---------------------------------
+
+const donationBtn = document.querySelector(".header form a button");
+donationBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+});

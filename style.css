@@ -154,6 +154,47 @@ a {
   z-index: 9999999;
 }
 /*--------------------------------------------------------------------hero section-------------------------------*/
+#containerDetailes {
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* inset: 0; */
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+}
+#containerDetailes .modal {
+  width: 70%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 40px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#containerDetailes .modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.8rem;
+  background: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+#containerDetailes .modal h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+#containerDetailes .modal ul {
+  list-style-type: disc;
+  margin: 20px 30px;
+}
 #hero-section {
   width: 100%;
   min-height: 105dvh;
@@ -731,7 +772,7 @@ a {
 /*--------------------------------story section-------------------------------*/
 
 .story-section {
-  width: 70%;
+  width: 75%;
   color: #645757;
   height: 75vh;
   margin: auto;
@@ -740,15 +781,15 @@ a {
   justify-content: flex-start;
   align-items: center;
   margin-top: 130px;
+  gap: 30px;
 }
 .story-section .left-side {
   width: 50%;
   height: 100%;
-  /* padding-left: 8em; */
 }
 .story-section .left-side img {
   width: 100%;
-  height: 100%;
+  height: 95%;
   border-radius: 20px;
 }
 .story-section .right {
@@ -836,7 +877,7 @@ a {
 .founder-profile {
   display: flex;
   justify-content: center;
-  gap: 0px;
+  gap: 30px;
   width: 100%;
   margin: 50px auto;
   height: 90vh;
@@ -851,7 +892,7 @@ a {
   width: 50%;
 }
 .founder-profile .image img {
-  width: 80%;
+  width: 83%;
   height: 100%;
   border-radius: 15px;
   float: right;
@@ -1100,7 +1141,7 @@ a {
   margin: -60px 5px 90px 30px;
 }
 .application .left-side .applink .image img {
-  width: 200px;
+  width: 130px;
   height: 60px;
 }
 .application .left-side .applink .link .iphone,
